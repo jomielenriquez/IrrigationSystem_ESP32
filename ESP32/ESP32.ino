@@ -44,9 +44,11 @@ char daysOfTheWeek[7][12] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursd
 
 
 // Update these with values suitable for your network.
-const char* ssid = "PowerOfPhysics";
-const char* password = "siJonasBakling";
-const char* mqtt_server = "broker.mqtt-dashboard.com";
+//const char* ssid = "GlobeAtHome_726e8_2.4";
+//const char* password = "croods123";
+//const char* ssid = "GlobeAtHome_57910_5";
+//const char* password = "siJonasBakling";
+//const char* mqtt_server = "broker.mqtt-dashboard.com";
 #define mqtt_port 1883
 #define MQTT_USER "mqtt username"
 #define MQTT_PASSWORD "mqtt password"
@@ -231,9 +233,9 @@ void setup() {
   if (!WiFi.config(local_IP, gateway, subnet, dns)) { //WiFi.config(ip, gateway, subnet, dns1, dns2);
     Serial.println("WiFi STATION Failed to configure Correctly"); 
   } 
-  wifiMulti.addAP(ssid_1, password_1);  // add Wi-Fi networks you want to connect to, it connects strongest to weakest
-  wifiMulti.addAP(ssid_2, password_2);  // Adjust the values in the Network tab
-  wifiMulti.addAP(ssid_3, password_3);
+  //wifiMulti.addAP(ssid_1, password_1);  // add Wi-Fi networks you want to connect to, it connects strongest to weakest
+  //wifiMulti.addAP(ssid_2, password_2);  // Adjust the values in the Network tab
+  //wifiMulti.addAP(ssid_3, password_3);
   wifiMulti.addAP(ssid_4, password_4);  // You don't need 4 entries, this is for example!
   
   Serial.println("Connecting ...");
@@ -252,7 +254,7 @@ void setup() {
   Serial.println("Couldn't find RTC");
   while (1);
   }
-  rtc.adjust(DateTime(__DATE__, __TIME__));
+  //rtc.adjust(DateTime(__DATE__, __TIME__));
 
   //Setup SD Card
   if(!SD.begin()){
